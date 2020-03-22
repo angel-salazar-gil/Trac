@@ -11,9 +11,13 @@ const routes: Routes = [
     loadChildren: () => import('./pages/slide/slide.module').then( m => m.SlidePageModule)
   },
   {
+    path: 'contacto',
+    loadChildren: () => import('./pages/contacto/contacto.module').then( m => m.ContactoPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'inicio'
-  }
+  },
 ];
 
 @NgModule({
