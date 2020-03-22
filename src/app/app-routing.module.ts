@@ -6,11 +6,15 @@ const routes: Routes = [
   {
     path: 'inicio',
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
-  },  {
+  },
+  {
     path: 'slide',
     loadChildren: () => import('./pages/slide/slide.module').then( m => m.SlidePageModule)
   },
-
+  {
+    path: '**',
+    redirectTo: 'inicio'
+  }
 ];
 
 @NgModule({
