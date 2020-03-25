@@ -1,5 +1,7 @@
 {
   "name": "TRAC",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
