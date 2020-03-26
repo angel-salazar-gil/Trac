@@ -72,7 +72,6 @@ export class InicioPage implements OnInit {
     // create LatLng object
     const myLatLng = {lat: rta.coords.latitude, lng:  rta.coords.longitude};
     // create map
-    
     this.map = new google.maps.Map(mapEle, {
       center: myLatLng,
       zoom: 15
