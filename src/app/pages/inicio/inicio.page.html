@@ -1,6 +1,30 @@
+<ion-menu contentId="main" menuId="menu" side="start" type="overlay" swipeGesture="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-button size="large" expand="block" shape="round">
+      Login
+    </ion-button>
+    <ion-list>
+      <ion-item *ngFor="let c of components" [routerLink]="c.redirectTo" detail>
+        <ion-icon slot="start" [name]="c.icon"></ion-icon>
+        <ion-label> {{ c.name }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-router-outlet id="main"></ion-router-outlet>
+
 <ion-header>
   <ion-toolbar>
-    <ion-title>inicio</ion-title>
+    <ion-buttons slot="start">
+    <ion-menu-button menu="menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
 

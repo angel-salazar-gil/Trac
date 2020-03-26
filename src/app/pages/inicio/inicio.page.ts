@@ -9,6 +9,13 @@ interface Marker {
   };
   title: string;
 }
+
+interface Components {
+  icon: string;
+  name: string;
+  redirectTo: string;
+}
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
@@ -25,6 +32,25 @@ export class InicioPage implements OnInit {
       title: 'Parque Urbano Kabah'
     },
   ];
+
+  components: Components[] = [
+    {
+      icon: 'map',
+      name: 'Mapa',
+      redirectTo: '/inicio' 
+    },
+    {
+      icon: 'call',
+      name: 'Contacto',
+      redirectTo: '/contacto'
+    },
+    {
+      icon: 'clipboard',
+      name: 'Reporte',
+      redirectTo: '/inicio'
+    }
+  ];
+
   constructor(
     private geolocation: Geolocation
   ) { }
