@@ -11,12 +11,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/contacto/contacto.module').then( m => m.ContactoPageModule)
   },
   {
-    path: '**',
-    redirectTo: 'inicio'
-  },
-  {
     path: 'reporte',
     loadChildren: () => import('./pages/reporte/reporte.module').then( m => m.ReportePageModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'inicio'
   },
 
 ];
