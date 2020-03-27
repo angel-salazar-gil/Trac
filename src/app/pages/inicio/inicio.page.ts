@@ -26,13 +26,6 @@ export class InicioPage implements OnInit {
 	markers: Marker[] = [
 		{
 			position: {
-				lat: 21.161669,
-				lng: -86.851417
-			},
-			title: 'Cancún'
-		},
-		{
-			position: {
 				lat: 21.1433426,
 				lng: -86.8405372
 			},
@@ -64,13 +57,12 @@ export class InicioPage implements OnInit {
 		this.loadMap();
 	}
 	async loadMap() {
-		const rta = await this.geolocation.getCurrentPosition();
+		const myLatLng = { lat: 21.1433426, lng: -86.851417 };
+
 		// create a new map by passing HTMLElement
 		const mapEle: HTMLElement = document.getElementById('map');
 		// create LatLng object
-		const myLatLng = { lat: rta.coords.latitude, lng: rta.coords.longitude };
 		// create map
-
 		this.map = new google.maps.Map(mapEle, {
 			center: myLatLng,
 			zoom: 15
@@ -79,13 +71,12 @@ export class InicioPage implements OnInit {
 			mapEle.classList.add('show-map');
 			const marker = {
 				position: {
-					lat: rta.coords.latitude,
-					lng: rta.coords.longitude
+					lat: 21.1433426,
+					lng: -86.851417
 				},
-				title: 'Casa Edgar'
+				title: 'Cancún'
 			};
 			this.addMarker(marker);
-
 			this.renderMarkers();
 		});
 	}
@@ -101,5 +92,19 @@ export class InicioPage implements OnInit {
 			map: this.map,
 			title: marker.title
 		});
+	}
+
+	async geoloc() {
+		const rta = await this.geolocation.getCurrentPosition();
+		const myLatLng = { lat: rta.coords.latitude, lng: rta.coords.longitude };
+		const ubic = {
+			position: {
+				lat: rta.coords.latitude,
+				lng: rta.coords.longitude
+			},
+			title: 'Tu ubicación'
+		};
+		this.map.setCenter({ lat: rta.coords.latitude, lng: rta.coords.longitude });
+		this.addMarker(ubic);
 	}
 }
