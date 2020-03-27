@@ -47,7 +47,7 @@ export class InicioPage implements OnInit {
 		{
 			icon: 'clipboard',
 			name: 'Reporte',
-			redirectTo: '/reportes'
+			redirectTo: '/reporte'
 		}
 	];
 
