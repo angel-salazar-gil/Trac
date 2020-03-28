@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes, CanActivate } from '@angular/router';
+import {AuthGuard} from "./guards/auth.guard";
 
 const routes: Routes = [
   {
     path: 'inicio',
+    // tslint:disable-next-line: whitespace
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
@@ -15,9 +17,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/contacto/contacto.module').then( m => m.ContactoPageModule)
   },
   {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+
+  {
     path: '**',
     redirectTo: 'inicio'
   },
+  
 ];
 
 @NgModule({
