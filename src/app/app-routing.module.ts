@@ -18,11 +18,16 @@ const routes: Routes = [
   {
     path: 'reporte',
     loadChildren: () => import('./pages/reporte/reporte.module').then( m => m.ReportePageModule)
+  },{
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
+
   {
     path: '**',
     redirectTo: 'inicio'
   },
+  
 
 ];
 

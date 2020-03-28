@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ReportePage } from './reporte.page';
 
+import {AuthGuard} from "../../guards/auth.guard";
+
 const routes: Routes = [
   {
     path: '',
-    component: ReportePage
+    component: ReportePage, canActivate:[AuthGuard]
   }
 ];
 
