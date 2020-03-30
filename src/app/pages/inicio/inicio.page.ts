@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-
+import {AuthService} from '../../servicios/auth.service'
 declare var google;
 interface Marker {
 	position: {
@@ -51,7 +51,7 @@ export class InicioPage implements OnInit {
 		}
 	];
 
-	constructor(private geolocation: Geolocation) {}
+	constructor(private geolocation: Geolocation,public authservice: AuthService) {}
 
 	ngOnInit() {
 		this.loadMap();
@@ -79,6 +79,10 @@ export class InicioPage implements OnInit {
 			this.addMarker(marker);
 			this.renderMarkers();
 		});
+	}
+	Onlogout(){
+
+this.authservice.logout();
 	}
 
 	renderMarkers() {
