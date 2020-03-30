@@ -22,12 +22,14 @@ const routes: Routes = [
     path: 'registro',
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
-
+  {
+    path: 'provider',
+    loadChildren: () => import('./pages/provider/provider.module').then( m => m.ProviderPageModule)
+  },
   {
     path: '**',
     redirectTo: 'inicio'
   },
-  
 
 ];
 
