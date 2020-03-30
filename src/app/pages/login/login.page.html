@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title text-center>Iniciar sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+<div class="fondo">
+  <div class="contenedor">
+    <H3 class="titulo">Login</H3>
+    <p class="cabezera">No tienes una cuenta? <a routerLink="/registro">Crea una nueva...</a></p>
+    <br>
+    <ion-item color="light">
+      <ion-input type="text" [(ngModel)]="email" name="email" placeholder="Usuario"></ion-input>
+      <ion-icon class="icono-1" slot="end" name="person-outline"></ion-icon>
+    </ion-item>
+    <br>
+    <ion-item color="light">
+      <ion-input [(ngModel)]="password" type="password" name="password" placeholder="Password"></ion-input>
+      <ion-icon class="icono-1" slot="end" name="lock-closed"></ion-icon>
+    </ion-item>
+    <br>
+    <div class="check-box">        
+      <ion-checkbox  slot="start" color="primary" style="width: 15px; height: 15px; margin-top: 5px;"></ion-checkbox>
+      <p>Recuerda me</p>
+      <p>Olvidaste tu contraseña?</p>
+    </div>
+    <br>
+    <div class="btn-login" (click)="onSubmitLogin()"><p>LOGIN</p></div>
+    <br>
+    <br>
+    <p class="txt-pie">O inicia con</p>
+    <br>
+    <div class="redes-sociales">
+      <div id="facebook"><ion-icon slot="start" name="logo-facebook" class="icono-2"></ion-icon></div>
+      <div id="twitter"><ion-icon slot="start" name="logo-twitter" class="icono-2"></ion-icon></div>
+      <div id="google"><ion-icon slot="start" name="logo-google" class="icono-2"></ion-icon></div>
+    </div>
+  </div>
+</div>
+<div class="line"></div>
+</ion-content>
