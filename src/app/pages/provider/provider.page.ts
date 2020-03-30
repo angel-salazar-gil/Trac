@@ -17,14 +17,14 @@ interface Components {
 	name: string;
 	redirectTo: string;
 }
-
 @Component({
-	selector: 'app-inicio',
-	templateUrl: './inicio.page.html',
-	styleUrls: [ './inicio.page.scss' ]
+  selector: 'app-provider',
+  templateUrl: './provider.page.html',
+  styleUrls: ['./provider.page.scss'],
 })
-export class InicioPage implements OnInit {
-	map = null;
+export class ProviderPage implements OnInit {
+
+  map = null;
 	markers: Marker[] = [
 		{
 			position: {
@@ -35,25 +35,7 @@ export class InicioPage implements OnInit {
 		}
 	];
 
-	components: Components[] = [
-		{
-			icon: 'map',
-			name: 'Mapa',
-			redirectTo: '/inicio'
-		},
-		{
-			icon: 'call',
-			name: 'Contacto',
-			redirectTo: '/contacto'
-		},
-		{
-			icon: 'clipboard',
-			name: 'Reporte',
-			redirectTo: '/reporte'
-		}
-	];
-
-	constructor(private geolocation: Geolocation) {}
+	constructor() {}
 
 	ngOnInit() {
 		this.loadMap();
@@ -69,6 +51,7 @@ export class InicioPage implements OnInit {
 			center: myLatLng,
 			zoom: 15
 		});
+		// tslint:disable-next-line: only-arrow-functions
 		google.maps.event.addListenerOnce(this.map, 'idle', async () => {
 			mapEle.classList.add('show-map');
 			const marker = {
@@ -81,6 +64,15 @@ export class InicioPage implements OnInit {
 			this.addMarker(marker);
 			this.renderMarkers();
 		});
+		this.map.addListener('click', event => {
+
+			const marker = {
+				position: event.latLng,
+				title: 'Cancún'
+			};
+			console.log('hola' + event.latLng);
+			this.addMarker(marker);
+		  });
 	}
 
 	renderMarkers() {
@@ -95,18 +87,10 @@ export class InicioPage implements OnInit {
 			title: marker.title
 		});
 	}
-
-	async geoloc() {
-		const rta = await this.geolocation.getCurrentPosition();
-		const myLatLng = { lat: rta.coords.latitude, lng: rta.coords.longitude };
-		const ubic = {
-			position: {
-				lat: rta.coords.latitude,
-				lng: rta.coords.longitude
-			},
-			title: 'Tu ubicación'
-		};
-		this.map.setCenter({ lat: rta.coords.latitude, lng: rta.coords.longitude });
-		this.addMarker(ubic);
+	limpiar() {
+		this.map.clear();
+		this.map.off();
+		this.map.trigger('test');
 	}
 }
+
