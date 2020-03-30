@@ -40,14 +40,14 @@ export class InicioPage implements OnInit {
 			redirectTo: '/inicio'
 		},
 		{
-			icon: 'call',
-			name: 'Contacto',
-			redirectTo: '/contacto'
-		},
-		{
 			icon: 'clipboard',
 			name: 'Reporte',
 			redirectTo: '/reporte'
+		},
+		{
+			icon: 'call',
+			name: 'Contacto',
+			redirectTo: '/contacto'
 		}
 	];
 
