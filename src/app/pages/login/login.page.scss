@@ -95,7 +95,6 @@
 .txt-pie{
     margin-top: -20px;
     color: black;
-    font-weight: bold;
     text-align: center;
 }
 
@@ -160,7 +159,19 @@
     background-repeat: no-repeat;
 }
 
+@media (max-width: 650px){
+
+    .check-box p:last-child{
+        margin-left: 10px;
+    }
+
+}
+
 @media (max-width: 320px){
+
+    .check-box p:last-child{
+        margin-left: 0px;
+    }
 
     .fondo{
         position: absolute;

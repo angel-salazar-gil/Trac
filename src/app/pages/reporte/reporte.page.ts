@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @Component({
 	selector: 'app-reporte',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: [ './reporte.page.scss' ]
 })
 export class ReportePage implements OnInit {
-	constructor() {}
+	ubicacion = null;
+	constructor(private geolocation: Geolocation) {}
 
-	ngOnInit() {}
+	async ngOnInit() {
+		const ubicacionInp: HTMLElement = document.getElementById('ubicacion');
+		const rta = await this.geolocation.getCurrentPosition();
+		console.log('la latitude es: ' + rta.coords.latitude + 'la longitud es:' + rta.coords.longitude);
+	}
 }

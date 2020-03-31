@@ -18,13 +18,10 @@ const routes: Routes = [
   {
     path: 'reporte',
     loadChildren: () => import('./pages/reporte/reporte.module').then( m => m.ReportePageModule)
-  },{
-    path: 'registro',
-    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
   {
-    path: 'provider',
-    loadChildren: () => import('./pages/provider/provider.module').then( m => m.ProviderPageModule)
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
   {
     path: '**',
