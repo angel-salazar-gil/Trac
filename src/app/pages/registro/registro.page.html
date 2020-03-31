@@ -1,34 +1,53 @@
 <ion-header>
-  <ion-toolbar color="secondary">
+  <ion-toolbar color="primary">
     <ion-title text-center>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <img class="icon" src="assets/icon/register.svg" alt="">
+<ion-content >
+  <div class="fondo">
+    <div class="contenedor">
+      <H3 class="titulo">Registro</H3>
+      <p class="cabezera">Ya tienes una cuenta? <a routerLink="/login">Inicia sesión aqui...</a></p>
+      <br>
 
-  <ion-item>
-      <ion-label position="floating" > Nombre</ion-label>
-      <ion-input type="text" [(ngModel)]="name" name="name"></ion-input>
-    </ion-item>
+      <ion-item color="light">
+        <ion-input class="txt-input" type="text" [(ngModel)]="name" name="name" placeholder="Nombre"></ion-input>
+        <ion-icon class="icono-1" slot="end" name="person-outline"></ion-icon>
+      </ion-item>
 
-<ion-item>
-  <ion-label position="floating" > Correo electrónico</ion-label>
-  <ion-input type="text" [(ngModel)]="email" name="email"></ion-input>
-</ion-item>
-<ion-item>
-  <ion-label position="floating" > Contraseña</ion-label>
-  <ion-input  type="password" [(ngModel)]="password" name="password"></ion-input>
-</ion-item>
-<ion-item>
-  <ion-label position="floating" > Confirmar Contraseña</ion-label>
-  <ion-input  type="password" [(ngModel)]="password2" name="password"></ion-input>
-</ion-item>
-<br>
+      <ion-item color="light">
+        <ion-input class="txt-input" type="text" [(ngModel)]="email" name="email" placeholder="Correo Electronico"></ion-input>
+        <ion-icon class="icono-1" slot="end" name="mail"></ion-icon>
+      </ion-item>
 
-<ion-button color="secondary" expand="block" (click)="OnSubmitRegister()">Registrarse</ion-button>
-<br>
-<p text-center routerLink="/login">Ya tengo cuenta</p>
+      <ion-item color="light">
+        <ion-input class="txt-input" type="password" [(ngModel)]="password" name="password" placeholder="Contraseña"></ion-input>
+        <ion-icon class="icono-1" slot="end" name="lock-closed"></ion-icon>
+      </ion-item>
 
+      <ion-item color="light">
+        <ion-input class="txt-input" type="password" [(ngModel)]="password2" name="password" placeholder="Confirmar contraseña"></ion-input>
+        <ion-icon class="icono-1" slot="end" name="lock-closed"></ion-icon>
+      </ion-item>
 
+      <br>
+      <div class="check-box">        
+        <ion-checkbox  slot="start" color="primary" style="width: 15px; height: 15px; margin-top: 5px;"></ion-checkbox>
+        <p>Recuerda me</p>
+      </div>
+      <br>
+      <div class="btn-login" (click)="OnSubmitRegister()"><p>Registrarse</p></div>
+      <br>
+      <br>
+      <p class="txt-pie">O inicia con</p>
+      <br>
+      <div class="redes-sociales">
+        <div id="facebook"><ion-icon slot="start" name="logo-facebook" class="icono-2"></ion-icon></div>
+        <div id="twitter"><ion-icon slot="start" name="logo-twitter" class="icono-2"></ion-icon></div>
+        <div id="google"><ion-icon slot="start" name="logo-google" class="icono-2"></ion-icon></div>
+      </div>
+    </div>
+  </div>
+  <div class="line"></div>
 </ion-content>
