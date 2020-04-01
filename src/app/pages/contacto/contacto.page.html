@@ -1,78 +1,52 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>contacto</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="primary" slot="fixed">
+<ion-content>
 
-  <!-- Encabezado con imagen centrada rusticamente-->
-  <ion-grid>
-    <ion-row>
-        <ion-col
-        pushXs="3" sizeXs="6"
-        pushSm="4" sizeSm="4"
-        pushMd="4" sizeMd="4"
-        pushLg="4" sizeLg="4"
-        pushXl="4" sizeXl="4">
-            <ion-card class="image-card">
-                <ion-card-content>
-                    <ion-img src="https://tracqms.com/wp-content/uploads/2018/08/steve-willias-trac-qms-core-value-icon-1.png"></ion-img>
-                </ion-card-content>
-            </ion-card>
-        </ion-col>
-    </ion-row>
-  </ion-grid>
+  <div class="fondo">
+    <!-- Encabezado con imagen centrada rusticamente-->
+    <div class="encabezado"></div>
 
-  <!-- Card que contiene el formulario -->
-  <ion-card class="form-card">
-    <ion-card-content>
+    <!-- Card que contiene el formulario -->
+    <div class="contenedor">
       <form [formGroup]="contactForm" (ngSubmit)="submit()">
-        
-        <ion-list>
-  
-          <ion-item>
-            <ion-label position="floating">Name</ion-label>
-            <ion-input formControlName="name" type="text"></ion-input>
-            <div *ngFor="let error of errorMessages.name">
-              <ng-container *ngIf="name.hasError(error.type) && (name.dirty || name.touched )">
-                <small class="error-message">{{ error.message }}</small>
-              </ng-container>
-            </div>
-          </ion-item>
       
-          <ion-item>
-            <ion-label position="floating">Email</ion-label>
-            <ion-input formControlName="email" type="email"></ion-input>
-            <div *ngFor="let error of errorMessages.email">
-              <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
-                <small class="error-message">{{ error.message }} </small>
-              </ng-container>
-            </div>
-          </ion-item>
+        <ion-item color="light" class="ion-margin">
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input formControlName="name" type="text" placeholder="Name"></ion-input>
+          <div *ngFor="let error of errorMessages.name">
+            <ng-container *ngIf="name.hasError(error.type) && (name.dirty || name.touched )">
+              <small class="error-message">{{ error.message }}</small>
+            </ng-container>
+          </div>
+        </ion-item>
+    
+        <ion-item color="light" class="ion-margin">
+          <ion-label position="floating">Correo</ion-label>
+          <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
+          <div *ngFor="let error of errorMessages.email">
+            <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+              <small class="error-message">{{ error.message }} </small>
+            </ng-container>
+          </div>
+        </ion-item>
+    
+        <ion-item color="light" class="ion-margin">
+          <ion-label position="floating">Mensaje</ion-label>
+          <ion-textarea formControlName="message" type="text" rows="5" placeholder="Message"></ion-textarea>
+          <div *ngFor="let error of errorMessages.message">
+            <ng-container *ngIf="message.hasError(error.type) && (message.dirty || message.touched)">
+              <small class="error-message">{{ error.message }}</small>
+            </ng-container>
+          </div>
+        </ion-item>
+    
+        <div class="btn-enviar" disabled=[!contactForm.valid] color="primary" type="submit()" shape="round"><p>Enviar</p></div>
       
-          <ion-item>
-            <ion-label position="floating">Message</ion-label>
-            <ion-textarea formControlName="message" type="text" rows="5"></ion-textarea>
-            <div *ngFor="let error of errorMessages.message">
-              <ng-container *ngIf="message.hasError(error.type) && (message.dirty || message.touched)">
-                <small class="error-message">{{ error.message }}</small>
-              </ng-container>
-            </div>
-          </ion-item>
-      
-          <ion-button [disabled]="!contactForm.valid"
-          color="primary"
-          type="submit()"
-          expand="block"
-          shape="round">
-            Enviar
-          </ion-button>
-      
-        </ion-list>
-  
       </form>
-    </ion-card-content>
-  </ion-card>
-
+    </div>
+  </div>
 </ion-content>
