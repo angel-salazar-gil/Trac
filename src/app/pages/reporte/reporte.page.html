@@ -4,35 +4,49 @@
   <ion-grid fixed>
     <ion-row>
       <ion-col size="12">
-        <ion-label>Nombre</ion-label>
-        <ion-input></ion-input>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="6">
-        <ion-label>Estado</ion-label>
-        <ion-input></ion-input>
-      </ion-col>
-      <ion-col size="6">
-        <ion-label>Municipio</ion-label>
-        <ion-input></ion-input>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="12">
-        <ion-label>Numero Telefonico</ion-label>
-        <ion-input></ion-input>
+        <ion-list>
+          <ion-item>
+            <ion-label>Tipo de Denuncia</ion-label>
+            <ion-select value="otro" okText="OK" cancelText="Cancelar" required [(ngModel)]="reporte.tipo">
+              <ion-select-option value="robo">Robo</ion-select-option>
+              <ion-select-option value="asalto">Asalto</ion-select-option>
+              <ion-select-option value="drogas">Drogas</ion-select-option>
+              <ion-select-option value="otro">Otro</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="12">
+      <ion-list>
+        <ion-item>
+          <ion-label>Persona involucrada</ion-label>
+          <ion-select value="otro" okText="OK" cancelText="Cancelar" required [(ngModel)]="reporte.persona">
+            <ion-select-option value="usuario">Yo</ion-select-option>
+            <ion-select-option value="familiar">Familiar</ion-select-option>
+            <ion-select-option value="conocido">Conocido</ion-select-option>
+            <ion-select-option value="otro">Otro</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-list>
+          <ion-item>
         <ion-label>Descripcion</ion-label>
-        <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea required [(ngModel)]="reporte.desc"></ion-textarea>
+          </ion-item>
+        </ion-list>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="12">
-        <ion-button expand="block" type="submit" shape="round">
+        <ion-button expand="block" type="submit" shape="round" (click)="saveReporte()">
           Enviar
         </ion-button>
       </ion-col>
