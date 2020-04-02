@@ -39,7 +39,7 @@ export class VerReportePage implements OnInit {
         icon: 'success',
         title: 'Se ha eliminado con exito',
     });
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/reporte');
     }, err => {
       Swal.fire({
         icon: 'error',

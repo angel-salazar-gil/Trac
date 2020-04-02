@@ -39,7 +39,7 @@ export class EditarReportePage implements OnInit {
         icon: 'success',
         title: 'Se ha actualizado con exito',
     });
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/reporte');
     }, err => {
       Swal.fire({
         icon: 'error',
