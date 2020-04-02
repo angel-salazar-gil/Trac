@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../../servicios/auth2.service";
 import { Router } from "@angular/router";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro',
@@ -21,14 +22,21 @@ export class RegistroPage implements OnInit {
   }
 
   OnSubmitRegister(){
-
     if(this.password==this.password2){ 
       this.auth.register(this.email, this.password,this.name).then( auth => {
-      this.router.navigate(['home'])
-      console.log(auth)
-    }).catch(err => console.log(err))
-  }else{alert('Las contraseñas no coinciden.')}
-   
+      this.router.navigate(['home']);
+      console.log(auth);
+    }).catch(err =>
+    Swal.fire({
+      icon: 'error',
+      title: 'Se ha encontrado el siguiente '+ err,
+      })
+    );
+  } else{
+    Swal.fire({
+      icon: 'error',
+      title: 'Las contraseñas no coinciden.',
+      });
+    }
   }
-
 }
