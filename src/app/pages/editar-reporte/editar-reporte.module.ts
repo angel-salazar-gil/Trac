@@ -7,14 +7,10 @@ import { IonicModule } from '@ionic/angular';
 import { EditarReportePageRoutingModule } from './editar-reporte-routing.module';
 
 import { EditarReportePage } from './editar-reporte.page';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    EditarReportePageRoutingModule
-  ],
-  declarations: [EditarReportePage]
+	imports: [ CommonModule, FormsModule, IonicModule, EditarReportePageRoutingModule, ComponentsModule ],
+	declarations: [ EditarReportePage ]
 })
 export class EditarReportePageModule {}
