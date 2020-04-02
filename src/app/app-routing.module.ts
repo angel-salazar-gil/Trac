@@ -24,9 +24,23 @@ const routes: Routes = [
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
   {
+    path: 'agregar-reporte',
+    loadChildren: () => import('./pages/agregar-reporte/agregar-reporte.module').then( m => m.AgregarReportePageModule)
+  },
+  {
+    path: 'editar-reporte/:id',
+    loadChildren: () => import('./pages/editar-reporte/editar-reporte.module').then( m => m.EditarReportePageModule)
+  },
+  {
+    path: 'ver-reporte/:id',
+    loadChildren: () => import('./pages/ver-reporte/ver-reporte.module').then( m => m.VerReportePageModule)
+  },
+  {
     path: '**',
     redirectTo: 'inicio'
   },
+
+
 
 ];
 

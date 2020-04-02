@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit,Component, OnInit } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-
+import { Observable } from 'rxjs';
+import {Reporte} from '../../model/Reporte';
+import { FirebaseService } from '../../servicios/firebase.service';
 @Component({
   selector: 'app-reporte',
   templateUrl: './reporte.page.html',
@@ -8,12 +10,15 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 })
 export class ReportePage implements OnInit {
 ubicacion = null;
-constructor(private geolocation: Geolocation) {}
+private reportes: Observable<Reporte[]>;
+constructor(private geolocation: Geolocation, private fbService: FirebaseService) {}
 
   async ngOnInit() {
     const ubicacionInp: HTMLElement = document.getElementById('ubicacion');
-    const rta = await this.geolocation.getCurrentPosition();
-    console.log('la latitude es: ' + rta.coords.latitude + 'la longitud es:' + rta.coords.longitude);
+    // obteniendo todos los reportes
+    this.reportes = this.fbService.getReportes();
+    this.fbService.getReportes().subscribe((res) => {
+      console.log('Reporte', res);
+    });
   }
-
 }

@@ -5,28 +5,42 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label>Nombre</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-item slot="start">
-    <ion-label>Estado</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-item slot="end">
-    <ion-label>Municipio</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Numero Telefonico</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Descripcion</ion-label>
-    <ion-textarea></ion-textarea>
-  </ion-item>
-  <ion-button  expand="block" type="submit" shape="round">
-    Enviar
-  </ion-button>
-  <div class="line"></div>
+  <div class="title-block">
+    <div class="heading">Reportes</div>
+  </div>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>reportes</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let reporte of (reportes | async)">
+      <ion-thumbnail slot="start">
+        <img
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="
+        />
+      </ion-thumbnail>
+      <ion-label>
+        <h3>Titulo</h3>
+        <h2>{{reporte.title}}</h2>
+        <h3>reporte</h3>
+        <p align="justify">{{reporte.content}}</p>
+        <h3>Lontitud</h3>
+        <p align="justify">{{reporte.locationlat}}</p>
+        <br />
+        <h3>Longitud</h3>
+        <p align="justify">{{reporte.locationlong}}</p>
+        <br />
+      </ion-label>
+      <ion-button
+        fill="outline"
+        slot="end"
+        [routerLink]="'/ver-reporte/'+reporte.id"
+        >View</ion-button
+      >
+    </ion-item>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="'/agregar-reporte'">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

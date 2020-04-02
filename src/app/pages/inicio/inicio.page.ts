@@ -2,7 +2,10 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import {AuthService} from '../../servicios/auth.service'
+import {AuthService} from '../../servicios/auth.service';
+import { Observable } from 'rxjs';
+import {Reporte} from '../../model/Reporte';
+import { FirebaseService } from '../../servicios/firebase.service';
 declare var google;
 interface Marker {
 	position: {
@@ -24,6 +27,8 @@ interface Components {
 	styleUrls: [ './inicio.page.scss' ]
 })
 export class InicioPage implements OnInit {
+	ubicacion = null;
+private reportes: Observable<Reporte[]>;
 	map = null;
 	markers: Marker[] = [
 		{
@@ -50,10 +55,15 @@ export class InicioPage implements OnInit {
 			icon: 'clipboard',
 			name: 'Reporte',
 			redirectTo: '/reporte'
+		},
+		{
+			icon: 'clipboard',
+			name: 'Reportar',
+			redirectTo: '/agregar-reporte'
 		}
 	];
 
-	constructor(private geolocation: Geolocation,public authservice: AuthService) {}
+	constructor(private geolocation: Geolocation,public authservice: AuthService, private fbService: FirebaseService) {}
 
 	ngOnInit() {
 		this.loadMap();
@@ -80,6 +90,25 @@ export class InicioPage implements OnInit {
 			};
 			this.addMarker(marker);
 			this.renderMarkers();
+		});
+		this.reportes = this.fbService.getReportes();
+		let contador = 0;
+		this.fbService.getReportes().subscribe((res) => {
+			if (res[contador]){
+
+				const marker = {
+					position: {
+						lat: res[contador]['locationlat'],
+						lng: res[contador]['locationlong']
+					},
+					title: 'Cancún'
+				};
+				this.addMarker(marker);
+				console.log('Reporte', res);
+				console.log(res[contador]['locationlat']);
+				console.log(res[contador]['locationlong']);
+				contador = contador + 1;
+			}
 		});
 	}
 	Onlogout(){

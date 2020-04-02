@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>editarReporte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <h3>Titulo</h3>
+      <ion-input placeholder="Enter Title" [(ngModel)]="reporte.title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <h3>Reporte</h3>
+      <ion-textarea rows="6" [(ngModel)]="reporte.content" placeholder="Enter more information here..."></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-button color="primary" expand="full" (click)="actualizarReporte()">Update</ion-button>
+</ion-content>
