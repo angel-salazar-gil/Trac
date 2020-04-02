@@ -1,4 +1,4 @@
-import { AfterViewInit,Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { Observable } from 'rxjs';
 import {Reporte} from '../../model/Reporte';
