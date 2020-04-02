@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ContactoPageRoutingModule } from './contacto-routing.module';
 
 import { ContactoPage } from './contacto.page';
+import { ContactService } from './services/contact.service';
 
 @NgModule({
   imports: [
@@ -16,6 +17,11 @@ import { ContactoPage } from './contacto.page';
     ContactoPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [ContactoPage]
+  providers: [
+    ContactService
+  ],
+  declarations: [
+    ContactoPage
+  ]
 })
 export class ContactoPageModule {}
