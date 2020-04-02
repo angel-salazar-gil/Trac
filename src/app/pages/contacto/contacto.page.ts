@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators, FormControl, FormGroup } from '@angular/forms';
+import { ContactService } from './services/contact.service';
 
 @Component({
   selector: 'app-contacto',
@@ -7,44 +8,45 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./contacto.page.scss'],
 })
 export class ContactoPage implements OnInit {
-  // Get text of the form
-  get name() {
-    return this.contactForm.get('name');
-  }
-  get email() {
-    return this.contactForm.get('email');
-  }
-  get message() {
-    return this.contactForm.get('message');
-  }
-  // error messages
-  public errorMessages = {
-    name: [
-      { type: 'required', message: 'Name is required' }
-    ],
-    email: [
-      { type: 'required', message: 'Email is required' },
-      { type: 'pattern', message: 'Please enter a valid email' }
-    ],
-    message: [
-      { type: 'required', message: 'Message is required' }
-    ]
-  };
-  // FormGroups
+
+  // FormGroup
   public contactForm: FormGroup;
+
+  // Error messages
+  public errorMessages = {
+    name: [ { type: 'required', message: 'Name is required' } ],
+    email: [ { type: 'required', message: 'Email is required' }, { type: 'pattern', message: 'Please enter a valid email' } ],
+    message: [ { type: 'required', message: 'Message is required' } ]
+  };
+
   // Constructor
-  constructor(private formBuilder: FormBuilder) {
-    // Validators
-    this.contactForm = formBuilder.group ({
-      name: ['', [Validators.required, Validators.maxLength(40)]],
-      email: ['', [Validators.required, Validators.maxLength(70),
-        Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')]],
-      message: ['', [Validators.required, Validators.maxLength(100)]],
-  });
+  constructor( private contactService: ContactService ) {
+    this.contactForm = this.createForm();
+  }
+
+  // Getters of the contactForm
+  get name() { return this.contactForm.get('name'); }
+  get email() { return this.contactForm.get('email'); }
+  get message() { return this.contactForm.get('message'); }
+
+  createForm() {
+    return new FormGroup({
+      name: new FormControl('', [Validators.required, Validators.maxLength(40)]),
+      email: new FormControl ('', [Validators.required, Validators.maxLength(70),
+      Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')]),
+      message: new FormControl ('', [Validators.required, Validators.maxLength(100)]),
+    });
+  }
+
+  onResetForm() {
+    this.contactForm.reset();
   }
 
   public submit() {
-    console.log(this.contactForm.value);
+    if (this.contactForm.valid) {
+      this.contactService.createMessage(this.contactForm.value);
+      this.onResetForm();
+    }
   }
 
   ngOnInit() {
