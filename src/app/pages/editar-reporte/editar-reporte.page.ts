@@ -3,6 +3,7 @@ import {Reporte} from '../../model/Reporte';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FirebaseService } from 'src/app/servicios/firebase.service';
 import { ToastController } from '@ionic/angular';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editar-reporte',
@@ -34,8 +35,16 @@ export class EditarReportePage implements OnInit {
   }
   actualizarReporte() {
     this.fbService.updateReporte(this.reporte).then(() => {
-     this.router.navigate(['/']);
+      Swal.fire({
+        icon: 'success',
+        title: 'Se ha actualizado con exito',
+    });
+      this.router.navigateByUrl('/');
     }, err => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Ha ocurrido un error',
+    });
     });
   }
 }

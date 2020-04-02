@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FirebaseService } from 'src/app/servicios/firebase.service';
 import { ToastController } from '@ionic/angular';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-agregar-reporte',
@@ -34,6 +35,10 @@ export class AgregarReportePage implements OnInit {
   }
   agregarReporte(){
     this.fbService.addReporte(this.reporte).then(() => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Se ha guardado con exito',
+    });
       this.router.navigateByUrl('/');
     }, err => {
     });

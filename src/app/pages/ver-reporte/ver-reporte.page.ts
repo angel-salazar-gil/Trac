@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import {Reporte} from '../../model/Reporte';
 import { FirebaseService } from '../../servicios/firebase.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-ver-reporte',
@@ -34,8 +35,16 @@ export class VerReportePage implements OnInit {
   }
   deleteReporte() {
     this.fbService.deleteReporte(this.reporte.id).then(() => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Se ha eliminado con exito',
+    });
       this.router.navigateByUrl('/');
     }, err => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Ha ocurrido un error',
+    });
     });
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../../servicios/auth2.service";
 import { Router } from "@angular/router";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro',
@@ -27,7 +28,13 @@ export class RegistroPage implements OnInit {
       this.router.navigate(['home'])
       console.log(auth)
     }).catch(err => console.log(err))
-  }else{alert('Las contraseñas no coinciden.')}
+  }else{
+    Swal.fire({
+      icon: 'error',
+      title: 'Las contraseñas no coinciden',
+
+  })
+  }
    
   }
 
