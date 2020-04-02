@@ -22,20 +22,21 @@ export class RegistroPage implements OnInit {
   }
 
   OnSubmitRegister(){
-
     if(this.password==this.password2){ 
       this.auth.register(this.email, this.password,this.name).then( auth => {
-      this.router.navigate(['home'])
-      console.log(auth)
-    }).catch(err => console.log(err))
-  }else{
+      this.router.navigate(['home']);
+      console.log(auth);
+    }).catch(err =>
     Swal.fire({
       icon: 'error',
-      title: 'Las contraseñas no coinciden',
-
-  })
+      title: 'Se ha encontrado el siguiente '+ err,
+      })
+    );
+  } else{
+    Swal.fire({
+      icon: 'error',
+      title: 'Las contraseñas no coinciden.',
+      });
+    }
   }
-   
-  }
-
 }
