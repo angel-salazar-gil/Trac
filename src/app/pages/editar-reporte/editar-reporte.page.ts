@@ -15,6 +15,8 @@ export class EditarReportePage implements OnInit {
     id: '',
     title: '',
     content: '',
+    fecha: '',
+    hora: '',
     locationlat: '',
     locationlong: '',
     createdAt: ''
