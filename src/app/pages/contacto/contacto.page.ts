@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormControl, FormGroup } from '@angular/forms';
 import { ContactService } from './services/contact.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contacto',
@@ -45,6 +46,10 @@ export class ContactoPage implements OnInit {
   public submit() {
     if (this.contactForm.valid) {
       this.contactService.createMessage(this.contactForm.value);
+      Swal.fire({
+        icon: 'success',
+        title: 'Se ha guardado con exito',
+    });
       this.onResetForm();
     }
   }

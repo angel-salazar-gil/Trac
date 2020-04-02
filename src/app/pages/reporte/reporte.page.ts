@@ -20,9 +20,59 @@ export class ReportePage implements OnInit {
   horaPromedioNoche: number;
   moda: number;
   numModa: number;
+  /*
+  hora1: number;
+  hora2: number;
+  hora3: number;
+  hora4: number;
+  hora5: number;
+  hora6: number;
+  hora7: number;
+  hora8: number;
+  hora9: number;
+  hora10: number;
+  hora11: number;
+  hora12: number;
+  hora13: number;
+  hora14: number;
+  hora15: number;
+  hora16: number;
+  hora17: number;
+  hora18: number;
+  hora19: number;
+  hora20: number;
+  hora21: number;
+  hora22: number;
+  hora23: number;
+  hora24: number;
+  */
   hora = 0;
   horaDia = 0;
   horaNoche = 0;
+  hora1 = 0;
+  hora2 = 0;
+  hora3 = 0;
+  hora4 = 0;
+  hora5 = 0;
+  hora6 = 0;
+  hora7 = 0;
+  hora8 = 0;
+  hora9 = 0;
+  hora10 = 0;
+  hora11 = 0;
+  hora12 = 0;
+  hora13 = 0;
+  hora14 = 0;
+  hora15 = 0;
+  hora16 = 0;
+  hora17 = 0;
+  hora18 = 0;
+  hora19 = 0;
+  hora20 = 0;
+  hora21 = 0;
+  hora22 = 0;
+  hora23 = 0;
+  hora24 = 0;
 
 ubicacion = null;
 
@@ -69,58 +119,105 @@ constructor(private geolocation: Geolocation, private fbService: FirebaseService
         if (item.hora <= 12) {
           if (item.hora === 1) {
             contadorUno = contadorUno + 1;
+            this.hora1 = contadorUno;
           } else if (item.hora == 2) {
             contadorDos = contadorDos + 1;
+            this.hora2 = contadorDos;
           } else if (item.hora == 3) {
             contadorTres = contadorTres + 1;
+            this.hora3 = contadorTres;
+
           } else if (item.hora == 4) {
             contadorCuatro = contadorCuatro + 1;
+            this.hora4 = contadorCuatro;
+
           } else if (item.hora == 5) {
             contadorCinco = contadorCinco + 1;
+            this.hora5 = contadorCinco;
+
           } else if (item.hora == 6) {
             contadorSeis = contadorSeis + 1;
+            this.hora6 = contadorSeis;
+
           } else if (item.hora == 7) {
 
             contadorSiete = contadorSiete + 1;
+            this.hora7 = contadorSiete;
+
             console.log(contadorSiete);
           } else if (item.hora == 8) {
             contadorOcho = contadorOcho + 1;
+            this.hora8 = contadorOcho;
+
           } else if (item.hora == 9) {
             contadorNueve = contadorNueve + 1;
+            this.hora9 = contadorNueve;
+
           } else if (item.hora == 10) {
             contadorDiez = contadorDiez + 1;
+            this.hora10 = contadorDiez;
+
           } else if (item.hora == 11) {
             contadorOnce = contadorOnce + 1;
+            this.hora11 = contadorOnce;
+
           } else if (item.hora == 12) {
             contadorDoce = contadorDoce + 1;
+            this.hora12 = contadorDoce;
+
           }
           this.calculateSumDia(item.hora);
           contadorDia = contadorDia + 1;
+
         } else {
           if (item.hora == 13) {
            contadorTrece = contadorTrece + 1;
+           this.hora13 = contadorTrece;
+
           } else if (item.hora == 14) {
             contadorCatorce = contadorCatorce + 1;
+            this.hora14 = contadorCatorce;
+
           } else if (item.hora == 15) {
             contadorQuince = contadorQuince + 1;
+            this.hora15 = contadorQuince;
+
           } else if (item.hora == 16) {
             contador16 = contador16 + 1;
+            this.hora16 = contador16;
+
           } else if (item.hora == 17) {
             contador17 = contador17 + 1;
+            this.hora17 = contador17;
+
           } else if (item.hora == 18) {
             contador18 = contador18 + 1;
+            this.hora18 = contador18;
+
           } else if (item.hora == 19) {
             contador19 = contador19 + 1;
+            this.hora19 = contador19;
+
           } else if (item.hora == 20) {
             contador20 = contador20 + 1;
+            this.hora20 = contador20;
+
           } else if (item.hora == 21) {
             contador21 = contador21 + 1;
+            this.hora21 = contador21;
+
           } else if (item.hora == 22) {
             contador22 = contador22 + 1;
+            this.hora22 = contador22;
+
           } else if (item.hora == 23) {
             contador23 = contador23 + 1;
+            this.hora23 = contador23;
+
           } else if (item.hora == 24) {
             contador24 = contador24 + 1;
+            this.hora24 = contador24;
+
           }
           this.calculateSumNoche(item.hora);
           contadorNoche = contadorNoche + 1;
@@ -222,7 +319,6 @@ constructor(private geolocation: Geolocation, private fbService: FirebaseService
   ) {
     this.moda = contadorUno;
     this.numModa = 1;
-
     if (this.moda < contadorDos) {
       this.numModa = 2;
       this.moda = contadorDos;
