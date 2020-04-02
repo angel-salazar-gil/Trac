@@ -16,6 +16,9 @@ export class VerReportePage implements OnInit {
     id: '',
     title: '',
     content: '',
+    fecha: '',
+
+    hora: '',
     locationlat: '',
     locationlong: '',
     createdAt: ''

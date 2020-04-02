@@ -15,10 +15,14 @@ export class AgregarReportePage implements OnInit {
   reporte: Reporte = {
     title: '',
     content: '',
+    fecha: '',
+    hora: '',
     locationlat: '',
     locationlong: '',
     createdAt: new Date().getTime()
   };
+  // miarray: string[] = ['lunes', 'martes', 'miercoles' , 'jueves' , 'viernes', 'sabado', 'domingo'];
+
   constructor(
     private geolocation: Geolocation,
     private activatedRoute: ActivatedRoute,
@@ -28,10 +32,17 @@ export class AgregarReportePage implements OnInit {
   ) { }
 
   async ngOnInit() {
+
+    /*
+    for (const dia of this.miarray) {
+      console.log(dia);
+    }*/
+
     const rta = await this.geolocation.getCurrentPosition();
     // tslint:disable-next-line: no-unused-expression
     this.reporte.locationlat = rta.coords.latitude;
     this.reporte.locationlong = rta.coords.longitude;
+
   }
   agregarReporte(){
     this.fbService.addReporte(this.reporte).then(() => {
