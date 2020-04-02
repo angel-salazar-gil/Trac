@@ -7,14 +7,10 @@ import { IonicModule } from '@ionic/angular';
 import { AgregarReportePageRoutingModule } from './agregar-reporte-routing.module';
 
 import { AgregarReportePage } from './agregar-reporte.page';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    AgregarReportePageRoutingModule
-  ],
-  declarations: [AgregarReportePage]
+	imports: [ CommonModule, FormsModule, IonicModule, AgregarReportePageRoutingModule, ComponentsModule ],
+	declarations: [ AgregarReportePage ]
 })
 export class AgregarReportePageModule {}

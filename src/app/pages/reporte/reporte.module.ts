@@ -7,14 +7,10 @@ import { IonicModule } from '@ionic/angular';
 import { ReportePageRoutingModule } from './reporte-routing.module';
 
 import { ReportePage } from './reporte.page';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    ReportePageRoutingModule
-  ],
-  declarations: [ReportePage]
+	imports: [ CommonModule, FormsModule, IonicModule, ReportePageRoutingModule, ComponentsModule ],
+	declarations: [ ReportePage ]
 })
 export class ReportePageModule {}
