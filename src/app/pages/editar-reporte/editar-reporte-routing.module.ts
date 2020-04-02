@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { EditarReportePage } from './editar-reporte.page';
+import {AuthGuard} from "../../guards/auth.guard";
 
 const routes: Routes = [
   {
     path: '',
-    component: EditarReportePage
+    component: EditarReportePage, canActivate:[AuthGuard]
   }
 ];
 
