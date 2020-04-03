@@ -36,9 +36,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/ver-reporte/ver-reporte.module').then( m => m.VerReportePageModule)
   },
   {
+    path: 'chatbot',
+    loadChildren: () => import('./pages/chatbot/chatbot.module').then( m => m.ChatbotPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'inicio'
-  },
+  }
+
+
 
 
 
