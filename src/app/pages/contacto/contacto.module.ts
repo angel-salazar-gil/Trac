@@ -9,6 +9,7 @@ import { ContactoPageRoutingModule } from './contacto-routing.module';
 import { ContactoPage } from './contacto.page';
 import { ContactService } from './services/contact.service';
 import { ComponentsModule } from '../../components/components.module';
+import { ContactComponentsModule } from './components/components.module';
 
 @NgModule({
 	imports: [
@@ -17,7 +18,8 @@ import { ComponentsModule } from '../../components/components.module';
 		IonicModule,
 		ContactoPageRoutingModule,
 		ReactiveFormsModule,
-		ComponentsModule
+		ComponentsModule,
+		ContactComponentsModule,
 	],
 	providers: [ ContactService ],
 	declarations: [ ContactoPage ]
