@@ -40,6 +40,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/chatbot/chatbot.module').then( m => m.ChatbotPageModule)
   },
   {
+    path: 'iframe',
+    loadChildren: () => import('./pages/iframe/iframe.module').then( m => m.IframePageModule)
+  },
+  {
     path: '**',
     redirectTo: 'inicio'
   }
