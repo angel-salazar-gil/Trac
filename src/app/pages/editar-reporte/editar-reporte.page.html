@@ -1,19 +1,21 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>editarReporte</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header titulo="Editar Reporte"></app-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <h3>Titulo</h3>
-      <ion-input placeholder="Enter Title" [(ngModel)]="reporte.title"></ion-input>
-    </ion-item>
-    <ion-item>
-      <h3>Reporte</h3>
-      <ion-textarea rows="6" [(ngModel)]="reporte.content" placeholder="Enter more information here..."></ion-textarea>
-    </ion-item>
-  </ion-list>
-  <ion-button color="primary" expand="full" (click)="actualizarReporte()">Update</ion-button>
+
+  <div class="fondo">
+    <div class="contenedor">
+      <ion-item class="titulo" color="dark">
+        <ion-label position="floating">Titulo</ion-label>
+        <ion-input placeholder="Enter Title" [(ngModel)]="reporte.title"></ion-input>
+      </ion-item>
+
+      <ion-item class="reporte" color="dark">
+        <ion-label position="floating">Reporte</ion-label>
+        <ion-textarea rows="6" [(ngModel)]="reporte.content" placeholder="Enter more information here..."></ion-textarea>
+      </ion-item>
+    
+      <div class="btn-enviar" (click)="actualizarReporte()"><p>Actualizar</p></div>
+    </div>
+  </div>
+  <div class="line"></div>
 </ion-content>

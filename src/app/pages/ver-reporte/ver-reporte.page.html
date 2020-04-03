@@ -1,36 +1,46 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>verReporte</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-header titulo="Ver"></app-header>
 <ion-content>
   <ion-card color="secondary">
     <ion-card-header>
       <ion-card-subtitle
-        >{{reporte.createdAt | date: 'short'}}</ion-card-subtitle
-      >
+        >{{reporte.createdAt | date: 'short'}}</ion-card-subtitle>
       <ion-card-title>{{reporte.title}}</ion-card-title>
     </ion-card-header>
 
-    <ion-card-content>
-      <p align="justify">{{reporte.content}}</p>
-      <br />
-      <p align="justify">{{reporte.locationlat}}</p>
-      <br />
-      <p align="justify">{{reporte.locationlong}}</p>
-      <br />
-      <p align="justify">El {{reporte.fecha}} a las {{reporte.hora}} horas</p>
-      <br />
-      <ion-button
-        slot="start"
-        color="warning"
-        [routerLink]="'/editar-reporte/' + reporte.id"
-        >Edit</ion-button
-      >
-      <ion-button slot="end" color="danger" (click)="deleteReporte()"
-        >Delete</ion-button
-      >
-    </ion-card-content>
+    <div class="encabezado">
+      <div class="logo"></div>
+    </div>
+
+    <div class="info">
+      <p>{{reporte.createdAt | date: 'medium'}}</p>
+    </div>
+
+    <div class="reporte">
+      <h1>{{reporte.title}}</h1>
+      <div class="reporte-cuerpo">
+        <p>{{reporte.content}}</p>
+      </div>
+    </div>
+  
+    <div class="reporte-data">
+      <h2>Datos del Incidente</h2>
+      <div class="reporte-contenido">
+        <p>Fecha: {{reporte.fecha}}</p>
+        <p>Hora: {{reporte.hora}} horas</p>
+      </div>
+    </div>
+
+    
+    <div class="botones fa fa-align-center">
+      <ion-button color="primary" [routerLink]="'/editar-reporte/' + reporte.id">Edit</ion-button>
+      <ion-button color="danger" (click)="deleteReporte()">Delete</ion-button>
+    </div>
+    <div class="boton">
+      <ion-button color="success" expand="block">Ver Ubucación</ion-button>
+    </div>
+    <!--
+    <p align="justify">{{reporte.locationlat}}</p>
+    <p align="justify">{{reporte.locationlong}}</p>
+    -->
   </ion-card>
 </ion-content>

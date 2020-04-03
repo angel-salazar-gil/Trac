@@ -7,14 +7,10 @@ import { IonicModule } from '@ionic/angular';
 import { VerReportePageRoutingModule } from './ver-reporte-routing.module';
 
 import { VerReportePage } from './ver-reporte.page';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    VerReportePageRoutingModule
-  ],
-  declarations: [VerReportePage]
+	imports: [ CommonModule, FormsModule, IonicModule, VerReportePageRoutingModule, ComponentsModule ],
+	declarations: [ VerReportePage ]
 })
 export class VerReportePageModule {}

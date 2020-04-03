@@ -6,9 +6,9 @@ import { Observable } from 'rxjs';
 import {Reporte} from '../../model/Reporte';
 import { FirebaseService } from '../../servicios/firebase.service';
 @Component({
-  selector: 'app-reporte',
-  templateUrl: './reporte.page.html',
-  styleUrls: ['./reporte.page.scss'],
+	selector: 'app-reporte',
+	templateUrl: './reporte.page.html',
+	styleUrls: [ './reporte.page.scss' ]
 })
 export class ReportePage implements OnInit {
   someValue: number;

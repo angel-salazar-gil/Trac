@@ -8,22 +8,18 @@ import { ContactoPageRoutingModule } from './contacto-routing.module';
 
 import { ContactoPage } from './contacto.page';
 import { ContactService } from './services/contact.service';
-import { ContactComponentsModule } from './components/components.module';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    ContactoPageRoutingModule,
-    ReactiveFormsModule,
-    ContactComponentsModule,
-  ],
-  providers: [
-    ContactService
-  ],
-  declarations: [
-    ContactoPage
-  ]
+	imports: [
+		CommonModule,
+		FormsModule,
+		IonicModule,
+		ContactoPageRoutingModule,
+		ReactiveFormsModule,
+		ComponentsModule
+	],
+	providers: [ ContactService ],
+	declarations: [ ContactoPage ]
 })
 export class ContactoPageModule {}
