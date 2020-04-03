@@ -3,220 +3,235 @@
   <div class="title-block">
     <div class="heading">Reportes</div>
   </div>
-  <ion-list>
-    <ion-list-header>
-    <h1>
-      Reportes
-    </h1>
+
+  <ion-list class="list">
+
+    <ion-list-header class="encabezado">
+    <h1>Reportes</h1>
     </ion-list-header>
-    <table class="table reportes">
-      <thead class="thead-dark">
-      <tr>
-        <th>
-          <h2>Titulo</h2>
-        </th>
-        <th>
-          <h2>fecha</h2>
-        </th>
-        <th>
-          <h2>Editar</h2>
-        </th>
-      </tr>
-    </thead>
-      <tr  *ngFor="let reporte of (reportes | async)">
-        <td>{{reporte.title}}</td>
-        <td>
-          {{reporte.createdAt | date: 'short'}}
-        </td>
-        <td>
-          <ion-button
-        fill="outline"
-        slot="end"
-        [routerLink]="'/ver-reporte/'+reporte.id"
-        >View</ion-button
-      >
-        </td>
-      </tr>
-    </table>
-    <table class="table estadisticas">
-      <thead class="thead-dark">
-      <tr>
-        <th>
-          <h2>Hora</h2>
-        </th>
-        <th>
-          <h2>Cantidad de reportes</h2>
-        </th>
-      </tr>
-    </thead>
-      <tr>
-        <td> <ion-input type="text" id="Una" name="some_name" value="1" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora1" name="some_name" value="{{hora1}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="Dos" name="some_name" value="2" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora2" name="some_name" value="{{hora2}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="tres" name="some_name" value="3" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora3" name="some_name" value="{{hora3}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="cuatro" name="some_name" value="4" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora4" name="some_name" value="{{hora4}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="cinco" name="some_name" value="5" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora5" name="some_name" value="{{hora5}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="seis" name="some_name" value="6" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora6" name="some_name" value="{{hora6}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="siete" name="some_name" value="7" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora7" name="some_name" value="{{hora7}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="ocho" name="some_name" value="8" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora8" name="some_name" value="{{hora8}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="nueve" name="some_name" value="9" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora9" name="some_name" value="{{hora9}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="diez" name="some_name" value="10" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora10" name="some_name" value="{{hora10}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="once" name="some_name" value="11" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora11" name="some_name" value="{{hora11}}" readonly></ion-input></td>
-      </tr>
 
-      <tr>
-        <td> <ion-input type="text" id="doce" name="some_name" value="12" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora12" name="some_name" value="{{hora12}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="trece" name="some_name" value="13" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora13" name="some_name" value="{{hora13}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="catorce" name="some_name" value="14" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora14" name="some_name" value="{{hora14}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="quince" name="some_name" value="15" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora15" name="some_name" value="{{hora15}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="dieciseis" name="some_name" value="16" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora16" name="some_name" value="{{hora16}}" readonly></ion-input></td>
-      </tr>
+    <div class="table-responsive tabla-responsiva">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Titulo</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reporte of (reportes | async)">
+            <td>{{reporte.title}}</td>
+            <td>{{reporte.createdAt | date: 'short'}}</td>
+            <td><ion-button fill="outline" slot="end" [routerLink]="'/ver-reporte/'+reporte.id">Ver</ion-button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-      <tr>
-        <td> <ion-input type="text" id="diecisiete" name="some_name" value="17" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora17" name="some_name" value="{{hora17}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="dieciocho" name="some_name" value="18" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora18" name="some_name" value="{{hora18}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="diecinueve" name="some_name" value="19" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora19" name="some_name" value="{{hora19}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="veinte" name="some_name" value="20" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora20" name="some_name" value="{{hora20}}" readonly></ion-input></td>
-      </tr>
-
-      <tr>
-        <td> <ion-input type="text" id="veintiuno" name="some_name" value="21" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora21" name="some_name" value="{{hora21}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="veintidos" name="some_name" value="22" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora22" name="some_name" value="{{hora22}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="veintitres" name="some_name" value="23" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora23" name="some_name" value="{{hora23}}" readonly></ion-input></td>
-      </tr>
-      <tr>
-        <td> <ion-input type="text" id="veintecuatro" name="some_name" value="24" readonly></ion-input></td>
-        <td><ion-input type="text" id="hora24" name="some_name" value="{{hora24}}" readonly></ion-input></td>
-      </tr>
-    </table>
-    <table class="table estadisticas">
-      <thead class="thead-dark">
-      <tr>
-        <th>
-          <h2>Total de reportes</h2>
-        </th>
-        <th>
-          <h2>Hora promedio de asaltos</h2>
-        </th>
-      </tr>
-    </thead>
-      <tr>
-        <td> <ion-input type="text" id="totalReportes" name="some_name" value="{{totalReportes}}" readonly></ion-input></td>
-        <td><ion-input type="text" id="horaPromedio" name="some_name" value="{{horaPromedio}}" readonly></ion-input></td>
-      </tr>
-    </table>
-    <table class="table estadisticas">
-      <thead class="thead-dark">
-      <tr>
-        <th>
-          <h2>Hora con mayor índice de saltos</h2>
-        </th>
-        <th>
-          <h2>Asaltos</h2>
-        </th>
-      </tr>
-    </thead>
-      <tr>
-        <td><ion-input type="text" id="numModa" name="some_name" value="{{numModa}}" readonly></ion-input></td>
-        <td> <ion-input type="text" id="indiceMayor" name="some_name" value="{{moda}}" readonly></ion-input></td>
-      </tr>
-    </table>
-    <table class="table estadisticas">
-      <thead class="thead-dark">
-      <tr>
-
-        <th>
-          <h2>Total de reportes en la mañana</h2>
-        </th>
-        
-        <th>
-          <h2>Hora promedio de asaltos en la mañana</h2>
-        </th>
-
-      </tr>
-    </thead>
-      <tr>
-        <td> <ion-input type="text" id="totalReportesDia" name="some_name" value="{{totalReportesDia}}" readonly></ion-input></td>
-        <td><ion-input type="text" id="horaPromedioDia" name="some_name" value="{{horaPromedioDia}}" readonly></ion-input></td>
-      </tr>
-    </table>
-    <table class="table estadisticas">
-      <thead class="thead-dark">
-      <tr>
-        <th>
-          <h2>Total de reportes en la noche</h2>
-        </th>
-        <th>
-          <h2>Hora promedio de asaltos en la noche</h2>
-        </th>
-      </tr>
-    </thead>
-      <tr>
-        <td> <ion-input type="text" id="totalReportesNoche" name="some_name" value="{{totalReportesNoche}}" readonly></ion-input></td>
-        <td><ion-input type="text" id="horaPromedioNoche" name="some_name" value="{{horaPromedioNoche}}" readonly></ion-input></td>
-      </tr>
-    </table>
+    <div class="tabla-responsiva">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Cantidad de Reportes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td><ion-input class="ion-no-padding input" id="Una" name="some_name" value="1:00 am"></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora1" name="some_name" value="{{hora1}}"></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="Dos" name="some_name" value="2:00 am" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora2" name="some_name" value="{{hora2}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="tres" name="some_name" value="3:00 am" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora3" name="some_name" value="{{hora3}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="cuatro" name="some_name" value="4:00 am" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora4" name="some_name" value="{{hora4}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="cinco" name="some_name" value="5:00 am" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora5" name="some_name" value="{{hora5}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="seis" name="some_name" value="6:00 am" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora6" name="some_name" value="{{hora6}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">7</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="siete" name="some_name" value="7:00 am" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora7" name="some_name" value="{{hora7}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">8</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="ocho" name="some_name" value="8:00 am" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora8" name="some_name" value="{{hora8}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">9</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="nueve" name="some_name" value="9:00 am" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora9" name="some_name" value="{{hora9}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">10</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="diez" name="some_name" value="10:00 am" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora10" name="some_name" value="{{hora10}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">11</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="once" name="some_name" value="11:00 am" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora11" name="some_name" value="{{hora11}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">12</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="doce" name="some_name" value="12:00 pm" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora12" name="some_name" value="{{hora12}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">13</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="trece" name="some_name" value="13:00 pm" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora13" name="some_name" value="{{hora13}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">14</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="catorce" name="some_name" value="14:00 pm" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora14" name="some_name" value="{{hora14}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">15</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="quince" name="some_name" value="15:00 pm" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora15" name="some_name" value="{{hora15}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">16</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="dieciseis" name="some_name" value="16:00 pm" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora16" name="some_name" value="{{hora16}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">17</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="diecisiete" name="some_name" value="17:00 pm" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora17" name="some_name" value="{{hora17}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">18</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="dieciocho" name="some_name" value="18:00 pm" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora18" name="some_name" value="{{hora18}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">19</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="diecinueve" name="some_name" value="19:00 pm" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora19" name="some_name" value="{{hora19}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">20</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="veinte" name="some_name" value="20:00 pm" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora20" name="some_name" value="{{hora20}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">21</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="veintiuno" name="some_name" value="21:00 pm" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora21" name="some_name" value="{{hora21}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">22</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="veintidos" name="some_name" value="22:00 pm" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora22" name="some_name" value="{{hora22}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">23</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="veintitres" name="some_name" value="23:00 pm" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora23" name="some_name" value="{{hora23}}" readonly></ion-input></td>
+          </tr>
+          <tr>
+            <th scope="row">24</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="veintecuatro" name="some_name" value="24:00 am" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="hora24" name="some_name" value="{{hora24}}" readonly></ion-input></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     
+    <div class="margin">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Total de Reportes</th>
+            <th scope="col">Hora Promedio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="totalReportes" name="some_name" value="{{totalReportes}}" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="horaPromedio" name="some_name" value="{{horaPromedio}}" readonly></ion-input></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Hora con mayor índice de saltos</th>
+            <th scope="col">Asaltos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="numModa" name="some_name" value="{{numModa}}:00" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="indiceMayor" name="some_name" value="{{moda}}" readonly></ion-input></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Total de reportes en la mañana</th>
+            <th scope="col">Hora promedio de asaltos en la mañana</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="totalReportesDia" name="some_name" value="{{totalReportesDia}}" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="horaPromedioDia" name="some_name" value="{{horaPromedioDia}}:00" readonly></ion-input></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Total de reportes en la noche</th>
+            <th scope="col">Hora promedio de asaltos en la noche</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td><ion-input class="ion-no-padding input" type="text" id="totalReportesNoche" name="some_name" value="{{totalReportesNoche}}" readonly></ion-input></td>
+            <td><ion-input class="ion-no-padding input" type="text" id="horaPromedioNoche" name="some_name" value="{{horaPromedioNoche}}" readonly></ion-input></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>    
   </ion-list>
   
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
