@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
     height: 160px;
+    background-image: url(./resources/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .title-block .heading{
@@ -14,7 +17,43 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "Arial Black"
-  }
+}
+
+.encabezado{
+    text-align: center;
+    padding: 0px;
+}
+
+.encabezado h1{
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.list{
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.tabla-responsiva{
+    margin-top: 30px;
+    height: 400px;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+.input{
+    font-weight: bold;
+    width: 80px;
+}
+
+.margin{
+    margin-top: 70px;
+}
+
 .line{
     position: absolute;
     width: 304.5px;
@@ -26,10 +65,12 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .reportes{
     width: 60%;
     margin-left: 20%;
 }
+
 .estadisticas{
     margin-top: 50px;
     width: 60%;

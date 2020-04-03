@@ -1,6 +1,6 @@
 // tslint:disable: indent
 
-import { AfterViewInit,Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { Observable } from 'rxjs';
 import {Reporte} from '../../model/Reporte';
@@ -111,7 +111,7 @@ constructor(private geolocation: Geolocation, private fbService: FirebaseService
     let contador23 = 0;
     let contador24 = 0;
 
-    
+
 
 
     this.fbService.getReportes().subscribe((res) => {
@@ -262,7 +262,7 @@ constructor(private geolocation: Geolocation, private fbService: FirebaseService
   }
   calculateSum(value) {
     this.hora = (Number(value) + Number(this.hora));
-    //console.log(this.hora);
+    // console.log(this.hora);
   }
 
   calculateAverage(count) {
