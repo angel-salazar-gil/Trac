@@ -65,6 +65,11 @@ export class InicioPage implements OnInit {
 			icon: 'chatbubbles',
 			name: 'Chatbot',
 			redirectTo: '/chatbot'
+		},
+		{
+			icon: 'mic',
+			name: 'Chat de voz',
+			redirectTo: '/iframe'
 		}
 	];
 

@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { IframePageRoutingModule } from './iframe-routing.module';
 
 import { IframePage } from './iframe.page';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    IframePageRoutingModule
+    IframePageRoutingModule,
+    ComponentsModule
   ],
   declarations: [IframePage]
 })
