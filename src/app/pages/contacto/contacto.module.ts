@@ -8,6 +8,7 @@ import { ContactoPageRoutingModule } from './contacto-routing.module';
 
 import { ContactoPage } from './contacto.page';
 import { ContactService } from './services/contact.service';
+import { ContactComponentsModule } from './components/components.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { ContactService } from './services/contact.service';
     FormsModule,
     IonicModule,
     ContactoPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ContactComponentsModule,
   ],
   providers: [
     ContactService

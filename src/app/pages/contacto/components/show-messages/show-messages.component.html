@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Mensajes recibidos</h2>
+
+  <!-- Si hay mensajes se muesta este div, si no, el de noMensajes -->
+  <div *ngIf="mensajes?.length > 0; else noMensajes">
+
+
+    <ion-row class="header" *ngFor="let campo of campos">
+      <ion-col size="2">{{campo.nombre}}</ion-col>
+      <ion-col size="3">{{campo.correo}}</ion-col>
+      <ion-col size="4">{{campo.mensaje}}</ion-col>
+      <ion-col push="3"></ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let mensaje of mensajes">
+
+      <ion-col size="2">{{mensaje.name}}</ion-col>
+      <ion-col size="3">{{mensaje.email}}</ion-col>
+      <ion-col size="4">{{mensaje.message}}</ion-col>
+      <ion-col size="3">
+        <ion-button (click)="deleteMessage($event, mensaje)" color="danger" expand="block" fill="outline" shape="round">
+          Borrar
+        </ion-button>
+      </ion-col>
+
+    </ion-row>
+
+  </div>
+
+</div>
+
+<ng-template #noMensajes>
+  <h4>No hay mensajes</h4>
+</ng-template>
