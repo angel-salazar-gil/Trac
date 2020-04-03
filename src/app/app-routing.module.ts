@@ -44,9 +44,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/iframe/iframe.module').then( m => m.IframePageModule)
   },
   {
+    path: 'ver-mensajes',
+    loadChildren: () => import('./pages/ver-mensajes/ver-mensajes.module').then( m => m.VerMensajesPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'inicio'
-  }
+  },
+
+
 
 
 

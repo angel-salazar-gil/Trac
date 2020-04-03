@@ -57,6 +57,11 @@ export class InicioPage implements OnInit {
 			redirectTo: '/contacto'
 		},
 		{
+			icon: 'chatbox',
+			name: 'Mensajes contacto',
+			redirectTo: '/ver-mensajes'
+		},
+		{
 			icon: 'chatbubbles',
 			name: 'Chatbot',
 			redirectTo: '/chatbot'
