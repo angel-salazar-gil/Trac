@@ -47,7 +47,7 @@ export class NewMessageComponent implements OnInit {
       this.contactService.createMessage(this.contactForm.value);
       Swal.fire({
         icon: 'success',
-        title: 'Se ha guardado con exito',
+        title: '¡Se ha enviado con éxito tu mensaje!',
       });
       this.onResetForm();
     }
