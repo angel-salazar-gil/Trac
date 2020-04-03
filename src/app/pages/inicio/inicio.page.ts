@@ -42,17 +42,7 @@ export class InicioPage implements OnInit {
 
 	components: Components[] = [
 		{
-			icon: 'map',
-			name: 'Mapa',
-			redirectTo: '/inicio'
-		},
-		{
-			icon: 'person',
-			name: 'Contacto',
-			redirectTo: '/contacto'
-		},
-		{
-			icon: 'clipboard',
+			icon: 'podium',
 			name: 'Reporte',
 			redirectTo: '/reporte'
 		},
@@ -60,6 +50,16 @@ export class InicioPage implements OnInit {
 			icon: 'clipboard',
 			name: 'Reportar',
 			redirectTo: '/agregar-reporte'
+		},
+		{
+			icon: 'person',
+			name: 'Contacto',
+			redirectTo: '/contacto'
+		},
+		{
+			icon: 'chatbubbles',
+			name: 'Chatbot',
+			redirectTo: '/chatbot'
 		}
 	];
 
