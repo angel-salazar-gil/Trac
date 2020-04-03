@@ -1,0 +1,72 @@
+*{
+    font-family: 'Lato', sans-serif;
+}
+
+.fondo{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 10px;
+    background-color: #FFFFFF;
+}
+
+.contenedor{
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 0px;
+    bottom: 30px;
+    background-image: url(./resources/logo_fondo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.titulo{
+    margin-top: 40px;
+    color: black;
+    border-radius: 10px;
+}
+
+.reporte{
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.btn-enviar{
+    z-index: 99999;
+    width: 180px;
+    height: 38px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 250px;
+    background: #1669D3;
+    box-shadow: 4px 4px 10px rgba(22, 105, 211, 0.7);
+    border-radius: 20px;
+}
+
+.btn-enviar p{
+    padding-top: 4%;
+    margin-bottom: 0px;
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.line{
+    position: absolute;
+    width: 304.5px;
+    height: 234.5px;
+    left: 0px;
+    bottom: 0px;
+
+    background-image: url(./resources/pie.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
