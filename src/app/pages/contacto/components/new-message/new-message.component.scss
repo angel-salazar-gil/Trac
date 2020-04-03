@@ -1,0 +1,14 @@
+ion-button {
+    --background: #1669D3;
+    --box-shadow: 4px 4px 10px rgba(22, 105, 211, 0.7);
+    margin-top: 30px;
+    margin-bottom: 10px;
+    height: 38px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    color: #FFFFFF;
+}
+
+.error-message {
+    color: var(--ion-color-danger);
+}
