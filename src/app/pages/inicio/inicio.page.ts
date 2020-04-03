@@ -92,9 +92,13 @@ export class InicioPage implements OnInit {
 				},
 				title: 'Cancún'
 			};
+			this.reportesFirebase();
 			this.addMarker(marker);
 			this.renderMarkers();
 		});
+		
+	}
+	reportesFirebase(){
 		this.reportes = this.fbService.getReportes();
 		let contador = 0;
 		this.fbService.getReportes().subscribe((res) => {
