@@ -1,68 +1,68 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>agregarReporte</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Reporte</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <h3>Titulo</h3>
-      <ion-input
-      class="form-control"
-        placeholder="Enter Title"
-        [(ngModel)]="reporte.title"
-      ></ion-input>
-    </ion-item>
-    <ion-item>
-      <h3>Reporte</h3>
-      
-      <ion-textarea
-        rows="6"
-        [(ngModel)]="reporte.content"
-        placeholder="Reporte"
-      ></ion-textarea>
-    </ion-item>
-      <ion-item>
-        <h3>Fecha</h3>
-        <ion-input
-        type="date" class="form-control" id="fecha" name="fechaNacimiento" value="" min="1850-01-01"
-          [(ngModel)]="reporte.fecha"
-        ></ion-input>
-      </ion-item>      
-    <ion-item>
-      <h3>Hora</h3>
-      <ion-select [(ngModel)]="reporte.hora" class="form-control" name="hora" id="hora">
-        <ion-select-option value="1">01:00</ion-select-option>
-        <ion-select-option value="2">02:00</ion-select-option>
-        <ion-select-option value="3">03:00</ion-select-option>
-        <ion-select-option value="4">04:00</ion-select-option>
-        <ion-select-option value="5">05:00</ion-select-option>
-        <ion-select-option value="6">06:00</ion-select-option>
-        <ion-select-option value="7">07:00</ion-select-option>
-        <ion-select-option value="8">08:00</ion-select-option>
-        <ion-select-option value="9">09:00</ion-select-option>
-        <ion-select-option value="10">10:00</ion-select-option>
-        <ion-select-option value="11">11:00</ion-select-option>
-        <ion-select-option value="12">12:00</ion-select-option>
-        <ion-select-option value="13">13:00</ion-select-option>
-        <ion-select-option value="14">14:00</ion-select-option>
-        <ion-select-option value="15">15:00</ion-select-option>
-        <ion-select-option value="16">16:00</ion-select-option>
-        <ion-select-option value="17">17:00</ion-select-option>
-        <ion-select-option value="18">18:00</ion-select-option>
-        <ion-select-option value="19">19:00</ion-select-option>
-        <ion-select-option value="20">20:00</ion-select-option>
-        <ion-select-option value="21">21:00</ion-select-option>
-        <ion-select-option value="22">22:00</ion-select-option>
-        <ion-select-option value="23">23:00</ion-select-option>
-        <ion-select-option value="24">24:00</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <script>
-    </script>
-  </ion-list>
-  <ion-button color="primary" expand="full" (click)="agregarReporte()"
-    >Create</ion-button
-  >
+  <div class="fondo">
+    <div class="contenedor">
+
+        <ion-item class="titulo" color="light">
+          <ion-label position="floating">Titulo</ion-label>
+          <ion-input placeholder="Enter Title" [(ngModel)]="reporte.title"></ion-input>
+        </ion-item>
+        
+        <ion-list class="lista">
+          <ion-item class="fecha" color="light">
+            <ion-label position="stacked">Fecha</ion-label>
+            <hr>
+            <ion-input class="form-control" type="date" id="fecha" name="fechaNacimiento" value="" min="1850-01-01" [(ngModel)]="reporte.fecha"></ion-input>
+            <hr>
+          </ion-item>
+          
+          <ion-item class="hora" color="light">
+            <ion-label position="stacked">Hora</ion-label>
+            <hr>
+            <ion-select [(ngModel)]="reporte.hora" class="form-control" name="hora" id="hora">
+              <ion-select-option value="1">01:00</ion-select-option>
+              <ion-select-option value="2">02:00</ion-select-option>
+              <ion-select-option value="3">03:00</ion-select-option>
+              <ion-select-option value="4">04:00</ion-select-option>
+              <ion-select-option value="5">05:00</ion-select-option>
+              <ion-select-option value="6">06:00</ion-select-option>
+              <ion-select-option value="7">07:00</ion-select-option>
+              <ion-select-option value="8">08:00</ion-select-option>
+              <ion-select-option value="9">09:00</ion-select-option>
+              <ion-select-option value="10">10:00</ion-select-option>
+              <ion-select-option value="11">11:00</ion-select-option>
+              <ion-select-option value="12">12:00</ion-select-option>
+              <ion-select-option value="13">13:00</ion-select-option>
+              <ion-select-option value="14">14:00</ion-select-option>
+              <ion-select-option value="15">15:00</ion-select-option>
+              <ion-select-option value="16">16:00</ion-select-option>
+              <ion-select-option value="17">17:00</ion-select-option>
+              <ion-select-option value="18">18:00</ion-select-option>
+              <ion-select-option value="19">19:00</ion-select-option>
+              <ion-select-option value="20">20:00</ion-select-option>
+              <ion-select-option value="21">21:00</ion-select-option>
+              <ion-select-option value="22">22:00</ion-select-option>
+              <ion-select-option value="23">23:00</ion-select-option>
+              <ion-select-option value="24">24:00</ion-select-option>
+            </ion-select>
+            <hr>
+          </ion-item>
+        </ion-list>
+
+        <ion-item class="reporte" color="light">
+          <ion-label position="floating">Reporte</ion-label>
+          <ion-textarea rows="6" [(ngModel)]="reporte.content" placeholder="Reporte"></ion-textarea>
+        </ion-item>
+
+        <script></script>
+
+      <div class="btn-enviar" (click)="agregarReporte()"><p>Enviar</p></div>
+    </div>
+  </div>
+  <div class="line"></div>
 </ion-content>
