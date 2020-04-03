@@ -153,17 +153,7 @@
     border-radius: 25px;
 }
 
-.line{
-    position: absolute;
-    width: 304.5px;
-    height: 234.5px;
-    left: 0px;
-    bottom: 0px;
 
-    background-image: url(./resources/pie.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 
 @media (max-width: 650px){
 
@@ -188,16 +178,5 @@
         background-color: #FFFFFF;
     }
 
-    .line{
-        position: absolute;
-        width: 304.5px;
-        height: 234.5px;
-        left: 0px;
-        bottom: -90px;
-    
-        background-image: url(./resources/pie.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
 
 }
