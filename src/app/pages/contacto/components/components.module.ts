@@ -6,6 +6,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ContactService } from '../services/contact.service';
 import { NewMessageComponent } from './new-message/new-message.component';
 import { ShowMessagesComponent } from './show-messages/show-messages.component';
+import { FondoContactoComponent } from './fondo-contacto/fondo-contacto.component';
 
 @NgModule({
     imports: [
@@ -20,10 +21,12 @@ import { ShowMessagesComponent } from './show-messages/show-messages.component';
     exports: [
         NewMessageComponent,
         ShowMessagesComponent,
+        FondoContactoComponent,
     ],
     declarations: [
         NewMessageComponent,
         ShowMessagesComponent,
+        FondoContactoComponent,
     ],
 })
 

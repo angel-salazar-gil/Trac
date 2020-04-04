@@ -34,7 +34,7 @@ export class NewMessageComponent implements OnInit {
       name: new FormControl('', [Validators.required, Validators.maxLength(40)]),
       email: new FormControl('', [Validators.required, Validators.maxLength(70),
       Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')]),
-      message: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+      message: new FormControl('', [Validators.required, Validators.maxLength(255)]),
     });
   }
 
