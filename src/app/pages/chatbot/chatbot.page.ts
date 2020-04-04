@@ -71,7 +71,7 @@ export class ChatbotPage implements OnInit{
 
     this.user_textToSend = ''; // limpiamos la caja de texto en la que el usuario escribe
     // console.log(newMessage_user.text);
-    if ((newMessage_user.text).includes('robaron') || (newMessage_user.text).includes('asaltado')) {
+    if ((newMessage_user.text).includes('robaron') || (newMessage_user.text).includes('asaltaron')) {
       this.reporte.title = newMessage_user.text;
       console.log(this.reporte.title);
     }
