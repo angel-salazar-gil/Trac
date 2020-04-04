@@ -19,7 +19,8 @@ export class AuthService {
         const uid = res.user.uid;
           this.db.collection('users').doc(uid).set({
             name : name,
-            uid : uid
+            uid : uid,
+            isadmin :false
           })
         
         resolve(res)
@@ -31,7 +32,7 @@ export class AuthService {
   
   
 
- 
+
 
 
 }
