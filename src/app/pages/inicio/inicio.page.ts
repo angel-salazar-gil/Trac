@@ -92,26 +92,34 @@ export class InicioPage implements OnInit {
 				},
 				title: 'Cancún'
 			};
+			this.reportesFirebase();
 			this.addMarker(marker);
 			this.renderMarkers();
 		});
+	}
+	reportesFirebase(){
 		this.reportes = this.fbService.getReportes();
 		let contador = 0;
 		this.fbService.getReportes().subscribe((res) => {
-			if (res[contador]) {
-				const marker = {
-					position: {
-						lat: res[contador]['locationlat'],
-						lng: res[contador]['locationlong']
-					},
-					title: 'Cancún'
-				};
-				this.addMarker(marker);
-				console.log('Reporte', res);
-				console.log(res[contador]['locationlat']);
-				console.log(res[contador]['locationlong']);
-				contador = contador + 1;
-			}
+			res.forEach(item => {
+				if (res[contador]) {
+					const marker2 = {
+						position: {
+							lat: res[contador]['locationlat'],
+							lng: res[contador]['locationlong']
+						},
+						title: 'Cancún'
+					};
+					this.addMarker(marker2);
+					/*
+					console.log('Reporte', res);
+					console.log(res[contador]['locationlat']);
+					console.log(res[contador]['locationlong']);
+					*/
+					contador = contador + 1;
+
+				}
+			});
 		});
 	}
 	Onlogout() {
