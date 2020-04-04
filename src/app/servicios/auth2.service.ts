@@ -32,9 +32,7 @@ export class AuthService {
   
   
 
-  isUserAdmin(userUid){
-    this.AFauth.user.
-  }
+
 
 
 }
