@@ -1,12 +1,7 @@
 <app-header titulo="Ver"></app-header>
-<ion-content>
-  <ion-card color="secondary">
-    <ion-card-header>
-      <ion-card-subtitle
-        >{{reporte.createdAt | date: 'short'}}</ion-card-subtitle>
-      <ion-card-title>{{reporte.title}}</ion-card-title>
-    </ion-card-header>
 
+<ion-content class="fondo">
+  <div class="fondo">
     <div class="encabezado">
       <div class="logo"></div>
     </div>
@@ -36,11 +31,11 @@
       <ion-button color="danger" (click)="deleteReporte()">Delete</ion-button>
     </div>
     <div class="boton">
-      <ion-button color="success" expand="block">Ver Ubucación</ion-button>
+      <ion-button color="success" expand="block" [routerLink]="'/inicio'">Ver Ubucación</ion-button>
     </div>
     <!--
     <p align="justify">{{reporte.locationlat}}</p>
     <p align="justify">{{reporte.locationlong}}</p>
     -->
-  </ion-card>
+  </div>
 </ion-content>
