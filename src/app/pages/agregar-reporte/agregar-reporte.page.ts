@@ -6,13 +6,7 @@ import { ToastController, Platform } from '@ionic/angular';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import Swal from 'sweetalert2';
 import * as firebase from 'firebase';
-const config = {
-  apiKey: 'AIzaSyDmO2szwVzejxOlt9kob3GwEgPqLUzyWqE',
-  authDomain: 'trac-cc410.firebaseapp.com',
-  databaseURL: 'https://trac-cc410.firebaseio.com',
-  projectId: 'trac-cc410',
-  storageBucket: 'trac-cc410.appspot.com',
-};
+
 // firebase.initializeApp(config);
 @Component({
   selector: 'app-agregar-reporte',
