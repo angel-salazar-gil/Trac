@@ -7,6 +7,7 @@ import { FirebaseService } from 'src/app/servicios/firebase.service';
 import {Reporte} from '../../model/Reporte';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import * as firebase from 'firebase';
 
 ApiAiConstants.DEFAULT_CLIENT_LANG = ApiAiConstants.AVAILABLE_LANGUAGES.ES; // Aqui controlamos el lenguaje para comunicarnos con el agente
 @Component({
@@ -46,6 +47,22 @@ export class ChatbotPage implements OnInit{
     });
 
   } // fin constructor
+  InsertData(){
+    // tslint:disable-next-line: new-parens
+    // let estatus = new Object();
+    // tslint:disable-next-line: prefer-const
+    var estatus = new Object();
+    // tslint:disable-next-line: label-position
+    estatus = {
+      status: 1,
+    };
+    var rootRef = firebase.database().ref();
+    var child = rootRef.child('/estatus');
+    // var childRef = child.push();
+    var childRef2 = child.update(estatus);
+
+    // childRef.set('status');
+   }
   async ngOnInit() {
 
     /*
@@ -117,6 +134,7 @@ export class ChatbotPage implements OnInit{
   }//fin scrollToBottom
   agregarReporte() {
     this.fbService.addReporte(this.reporte).then(() => {
+      this.InsertData();
       console.log('Se ha guardado con exito');
     }, err => {
     });
