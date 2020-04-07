@@ -4,7 +4,7 @@ Technological Reports of Assaults in Cancún
 This app accompanies the Ionic component documentation.
 
 ## Installation & Development
-* **Clone this repo:** `git clone https://github.com/angel-salazar-gil/Trac.git`
+* **Clone this repository:** `git clone https://github.com/angel-salazar-gil/Trac.git`
 * **Enter the folder:** `cd trac`
 * **Run in the console:** `npm install`
 * **Run:** `ionic serve -o` **from a terminal**
